@@ -2,19 +2,16 @@
 
 ## Project
 
-- Python GUI application for converting images to X-ray style
-- Uses tkinter for UI, Pillow for image processing
+- Python CLI tool for converting images to X-ray style
+- Uses Pillow for image processing
 
 ## Setup & Commands
 
 - `uv sync` - Install dependencies
-- `uv run python main.py` - Run the app
+- `uv run python main.py <input_folder> <output_folder>` - Run CLI (e.g., `uv run python main.py input output`)
 
-## Architecture
+## Deployment
 
-- Single file: `main.py` contains all UI and image processing logic
-- X-ray effect: grayscale → invert → contrast enhancement → brightness adjustment → blue tint
-
-## Testing
-
-- `uv run python -c "import main"` - Verify imports
+For Railway or similar containers (no GUI):
+- Run as CLI: `python main.py /input /output`
+- Mount volumes for input/output folders
